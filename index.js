@@ -19,3 +19,9 @@ db.sequelize.sync()
     .catch((err) => {
         console.log(err);
     })
+
+    app.get('/komik', (req, res) => {
+        try {
+            const komik = db.Komik.findAll();
+            res.status(200).json(komik);
+        }
