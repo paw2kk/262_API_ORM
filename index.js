@@ -30,7 +30,7 @@ db.sequelize.sync()
     });
 
     app.put('/komik/:id', async (req, res) => {
-        const { id } = req.params;
+        const id  = req.params.id;
         const data = req.body;
 
         try {
