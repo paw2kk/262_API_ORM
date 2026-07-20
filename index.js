@@ -23,5 +23,10 @@ db.sequelize.sync()
     app.get('/komik', (req, res) => {
         try {
             const komik = db.Komik.findAll();
-            res.status(200).json(komik);
+            res.send(komik);
+        } catch (error) {
+            res.send(error);
         }
+    });
+
+    
