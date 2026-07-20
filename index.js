@@ -20,13 +20,12 @@ db.sequelize.sync()
         console.log(err);
     })
 
-    app.get('/komik', (req, res) => {
+    app.get('/komik', async (req, res) => {
         try {
-            const komik = db.Komik.findAll();
+            const komik = await db.Komik.findAll();
             res.send(komik);
         } catch (error) {
             res.send(error);
         }
     });
 
-    
